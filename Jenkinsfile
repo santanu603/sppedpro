@@ -1,20 +1,24 @@
 pipeline {
     agent any
-
     stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/<your-username>/jenkins-demo.git'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building on CentOS 9...'
+                echo 'Building project...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running tests on CentOS 9...'
+                echo 'Running tests...'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying application on CentOS 9...'
+                echo 'Deploying application...'
             }
         }
     }
